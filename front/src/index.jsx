@@ -1,6 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const App = () => <di>hello react!!</di>;
+import CalendarBoard from './components/CalendarBoard';
+import CalendarBord from './components/CalendarBoard';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const App = () => (
+  <div>
+    <CalendarBord />
+  </div>
+);
+
+ReactDOM.render(<App />, document.getElementById('root'));
