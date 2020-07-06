@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import dayjs from 'dayjs';
+import 'dayjs/locale/ja';
 import CalendarBoard from './components/CalendarBoard';
-import CalendarBord from './components/CalendarBoard';
+//  初期化の際に必ず呼ぶ
+dayjs.locale('ja');
 
 const App = () => (
   <div>
-    <CalendarBord />
+    <CalendarBoard />
   </div>
 );
 
