@@ -2,9 +2,9 @@
 import dayjs from 'dayjs';
 
 // カレンダーの日付配列
-export const createCalendar = () => {
+export const createCalendar = (month) => {
   // 今月の最初の日を追加
-  const firstDay = dayjs().startOf('month');
+  const firstDay = getMonth(month);
   // 最初の日の曜日をindexを取得
   const firstDayIndex = firstDay.day();
 
@@ -14,6 +14,10 @@ export const createCalendar = () => {
       const diffFromFirstDay = i - firstDayIndex;
       return firstDay.add(diffFromFirstDay, 'day');
     });
+};
+
+export const getMonth = ({ year, month }) => {
+  return dayjs(`${year}-${month}`);
 };
 
 // 当日かどうか判断 (ブルーのポイントをいれる)
