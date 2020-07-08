@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ja';
 import CalendarBoard from './components/CalendarBoard/container';
+import Navigation from './components/Navigation/container';
 import rootReducer from './redux/rootReducer';
 
 const store = createStore(rootReducer);
@@ -14,6 +15,7 @@ dayjs.locale('ja');
 
 const App = () => (
   <Provider store={store}>
+    <Navigation />
     <CalendarBoard />
   </Provider>
 );
