@@ -34,3 +34,18 @@ export const isSameMonth = (m1, m2) => {
 
 // 月の最初の日付かを判断
 export const isFirstDay = (day) => day.date() === 1;
+
+// 高階関数
+const getMonthStateCreator = (diff) => (month) => {
+  console.log(month);
+  const day = getMonth(month).add(diff, 'month');
+  return formatMonth(day);
+};
+
+export const getNextMonth = getMonthStateCreator(1);
+export const getPreviousMonth = getMonthStateCreator(-1);
+
+export const formatMonth = (day) => ({
+  month: day.month() + 1,
+  year: day.year(),
+});
