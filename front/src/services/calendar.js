@@ -37,7 +37,6 @@ export const isFirstDay = (day) => day.date() === 1;
 
 // 高階関数
 const getMonthStateCreator = (diff) => (month) => {
-  console.log(month);
   const day = getMonth(month).add(diff, 'month');
   return formatMonth(day);
 };
