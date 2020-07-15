@@ -5,7 +5,13 @@ import * as styles from './style.css';
 // ビジネスロジック呼び出し
 const days = ['日', '月', '火', '水', '木', '金', '土'];
 
-const CalendarBord = ({ calendar, month, openAddScheduleDialog }) => {
+const CalendarBord = ({
+  calendar,
+  month,
+  openAddScheduleDialog,
+  schedules,
+}) => {
+  console.log(schedules);
   return (
     <div className={styles.container}>
       <GridList className={styles.grid} cols={7} spacing={0} cellHeight="auto">
