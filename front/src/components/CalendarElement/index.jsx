@@ -7,9 +7,10 @@ import {
   isSameDay,
   getMonth,
 } from '../../services/calendar';
+import Schedule from '../Schedule';
 import * as styles from './style.css';
 
-const CalendarElement = ({ day, month }) => {
+const CalendarElement = ({ day, month, schedules }) => {
   // 当日かどうか判断 (ブルーのポイントをいれる)
   const today = dayjs();
 
@@ -38,6 +39,11 @@ const CalendarElement = ({ day, month }) => {
           {day.format(format)}
         </span>
       </Typography>
+      <div className={styles.schedules}>
+        {schedules.map((e) => (
+          <Schedule key={e.id} schedule={e} />
+        ))}
+      </div>
     </div>
   );
 };
