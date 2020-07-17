@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addScheduleOpenDialog());
     dispatch(addScheduleSetValue({ date: d }));
   },
-  openCurrentScheduleDialog: (e, schedule) => {
+  openCurrentScheduleDialog: (schedule, e) => {
     // 他のイベントが発火するのをキャンセル
     e.stopPropagation();
 
