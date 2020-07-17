@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import thunk from 'redux-thunk';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ja';
 import DayjsUtils from '@date-io/dayjs';
@@ -12,7 +13,7 @@ import AddScheduleDialog from './components/AddScheduleDialog/container';
 import CurrentScheduleDialog from './components/CurrentScheduleDialog/container';
 import rootReducer from './redux/rootReducer';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 //  初期化の際に必ず呼ぶ
 dayjs.locale('ja');
